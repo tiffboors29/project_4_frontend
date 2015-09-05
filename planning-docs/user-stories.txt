@@ -1,0 +1,15 @@
+BASIC REQUIREMENTS (SEARCHING FEATURE)
+- Users can search microbreweries by location (state or zipcode)
+- Users can search microbreweries by name
+
+BASIC REQUIREMENTS (RANKING FEATURE)
+- Users can view 10 highest voted local beers when searching by state
+- Users can vote for their favorite beers in each state
+- Site will update list of highest voted local beers according to user votes
+
+
+REACH GOALS
+- Users can search microbreweries by state by clicking on the state on a map
+- Users can register and login to add local beers to the list if a beer is missing
+- User-added beers will be reviewed for authenticity and then added to the corresponding
+lists on the site
