@@ -1,19 +1,24 @@
 body {
   background-color: #EBF2F2;
+  font-family: 'Droid Sans', sans-serif;
+  color: #4D7A8C;
+  font-size: 14px;
 }
 
 h1 {
-
+  color: #4D7A8C;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 24px;
 }
 
 /* navbar styles */
 .navbar-brand {
-  font-size: 60px;
-  color: #ef5092;
+  font-size: 25px;
+  color: #EBF2F2;
 }
 
 .navbar-default .navbar-brand {
-  color: #ef5092;
+  color: #EBF2F2;
 }
 
 .navbar-header {
@@ -27,18 +32,20 @@ h1 {
 
 .navbar-nav > li > a {
   font-size: 20px;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a {
-  color: #ef5092;
+  color: #EBF2F2;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 .navbar-default .navbar-nav > li > a:hover {
-  color: #ed80b9;
+  color: #7AC1DE;
 }
 
 .navbar-default .navbar-brand:hover {
-  color: #ed80b9;
+  color: #7AC1DE;
 }
 
 .navbar-default {
@@ -47,16 +54,16 @@ h1 {
 
 @media (min-width: 1000px) {
   .navbar-header {
-    padding-bottom: 70px;
-    padding-top: 10px;
+    padding-bottom: 80px;
+    padding-top: 5px;
   }
 
   .navbar-nav {
-    padding-top: 40px;
+    padding-top: 45px;
   }
   .navbar-brand {
-    font-size: 60px;
-    color: #ef5092;
+    font-size: 30px;
+    color: #EBF2F2;
   }
   .navbar-default {
     background-color: #4D7A8C;
