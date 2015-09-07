@@ -20,3 +20,9 @@ bower_conponents/bootstrap/dist/css/*
 !bower_conponents/bootstrap/dist/js
 bower_conponents/bootstrap/dist/js*
 !bower_conponents/bootstrap/dist/js/bootstrap.js
+
+!bower_conponents/jquery
+bower_conponents/jqery/*
+!bower_conponents/jquery/dist
+bower_conponents/jquery/dist/*
+!!bower_conponents/jquery/dist/jquery.js
