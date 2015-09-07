@@ -11,6 +11,30 @@ h1 {
   font-size: 24px;
 }
 
+h3 {
+  color: #BF4C41;
+  font-family: 'Droid Sans', sans-serif;
+  font-size: 20px;
+}
+
+footer {
+  margin-bottom: 0;
+  margin-top: 20px;
+  color: #EBF2F2;
+  height: 30px;
+  background-color: #4D7A8C;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.info-icon {
+  height: 60px;
+}
+
+.container-kamn {
+  margin-bottom: 30px;
+}
+
 /* navbar styles */
 .navbar-brand {
   font-size: 25px;
