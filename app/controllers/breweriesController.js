@@ -37,6 +37,6 @@
 
   BreweriesController.$inject = ['breweriesFactory', 'appSettings'];
 
-  angular.module('breweriesApp').controller('breweriesController', breweriesController);
+  angular.module('breweriesApp').controller('breweriesController', BreweriesController);
 
 })();
