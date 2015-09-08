@@ -2,12 +2,12 @@
 <html ng-app="breweriesApp">
   <head>
     <meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="A Beer Guide for Travel">
-		<meta name="author" content="Tiffany Boorsma">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="A Beer Guide for Travel">
+	<meta name="author" content="Tiffany Boorsma">
 
-		<title>Beer, There & Back Again</title>
+	<title>Beer, There & Back Again</title>
 
     <!-- Vendor Styles -->
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
@@ -17,15 +17,15 @@
     <link rel="stylesheet" type="text/css" href="app/style.css">
 
     <!-- Favicon icon -->
-		<link rel="shortcut icon" href="img/favicon.ico">
+	<link rel="shortcut icon" href="img/favicon.ico">
 
   </head>
 
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar navbar-default navbar-fixed-top">
         <div class="container">
-          <!--mobile display -->
+            <!--mobile display -->
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -38,31 +38,30 @@
                   <span>
                     <img src="img/beerlogo.png" height="100px" alt="Beer There & Back Again">
                   </span></a>
-            </div>
+            </div> <!-- end navbar-header -->
 
             <div class="collapse navbar-collapse navbar-responsive-collapse">
                 <ul class="nav navbar-nav pull-right">
                     <li id="breweriesNav">
-                        <a href="">Breweries</a>
+                        <a href="#/breweries">Breweries</a>
                     </li>
                     <li id="beerRanksNav">
-                        <a href="">Beer Rankings</a>
+                        <a href="#/ranks">Beer Rankings</a>
                     </li>
                     <li id="voteNav">
-                        <a href="">Vote</a>
+                        <a href="#/vote">Vote</a>
                     </li>
                 </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- end navigation-->
+            </div> <!-- end navbar-collapse -->
+        </div> <!-- end container -->
+    </div> <!-- end navigation-->
 
-    
+
     <div ng-view></div>
 
-    <footer class="text-center">
+    <div class="footer text-center">
     Copyright © 2015 Tiffany Boorsma
-    </footer>
+    </div>
 
     <!-- Vendor JS -->
     <script src="bower_components/angular/angular.js"></script>
@@ -79,5 +78,7 @@
 
     <!-- Controllers JS -->
     <script src="app/controllers/breweriesController.js"></script>
+
   </body>
+
 </html>
