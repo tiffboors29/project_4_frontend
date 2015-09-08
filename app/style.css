@@ -18,13 +18,14 @@ h3 {
 }
 
 footer {
-  margin-bottom: 0;
-  margin-top: 20px;
+  position: fixed;
+  bottom: 0px;
   color: #EBF2F2;
-  height: 30px;
+  height: 60px;
+  width: 100%;
   background-color: #4D7A8C;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 
 .info-icon {
