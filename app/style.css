@@ -80,6 +80,11 @@ h3 {
   padding-right: 1%;
 }
 
+.brewery-view {
+  margin-top: 150px;
+}
+
+
 /* navbar styles */
 .navbar-brand {
   font-size: 25px;
@@ -136,6 +141,28 @@ h3 {
   }
   .navbar-default {
     background-color: #4D7A8C;
+  }
+
+  .footer {
+    margin-bottom: 0px;
+    margin-top: 20px;
+    color: #EBF2F2;
+    height: 60px;
+    width: 100%;
+    background-color: #4D7A8C;
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hide-sml {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .stateSelected {
+    margin-top: 2%;
   }
 }
 /****************/
