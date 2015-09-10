@@ -19,7 +19,7 @@
     )
     .when('/beers',
     { // detail of brewery with list of beers
-      controller: 'beersContoller as beersCtrl',
+      controller: 'beersController as beersCtrl',
       templateUrl: 'app/views/beers.html'
     }
     )
