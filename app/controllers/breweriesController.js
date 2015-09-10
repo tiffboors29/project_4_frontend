@@ -16,6 +16,7 @@
     vm.states = [];
 
     // following get set in getStateBeers or getCityBeers
+    vm.state = ''; // state name
     vm.search = ''; // city name
     vm.place = '';  // set to city or state being passed
     vm.heading = '';  // set in getBreweries functions'
