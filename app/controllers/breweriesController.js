@@ -10,25 +10,52 @@
     vm.reverse = false;
 
     // all breweries in a given location
-    vm.breweries = [];
+    vm.stateBreweries = [];
+    vm.cityBreweries = [];
+
+    vm.states = [];
 
     // detail of one brewery
     vm.brewery = {};
 
     function init(){
-      // retrieve al breweries from breweries API
-      breweriesFactory.getBreweries()
+      breweriesFactory.getStates()
       .then(function(result){
-        vm.breweries = result.data;
+        console.log('states result.data: ', result.data);
+        vm.states = result.data;
       }, function(data, status, headers, config){
-        console.log('Error getting breweries from api');
-        alert('Error getting breweries from api');
+        console.log('Error getting states list from api');
+        alert('Error getting states list from api');
       });
     }
 
     vm.doSort = function(propName){
       vm.sortBy = propName;
       vm.reverse = !vm.reverse;
+    };
+
+    // retrieve all state breweries from breweries API
+    vm.getStateBreweries = function(state) {
+      breweriesFactory.getStateBreweries(state)
+      .then(function(result){
+        console.log('state brews result.data: ', result.data);
+        vm.stateBreweries = result.data;
+      }, function(data, status, headers, config){
+        console.log('Error getting state breweries from api');
+        alert('Error getting state breweries from api');
+      });
+    };
+
+    // retrieve all city breweries from breweries API
+    vm.getCityBreweries = function(city) {
+      breweriesFactory.getCityBreweries(city)
+      .then(function(result){
+        console.log('city brews result.data: ', result.data);
+        vm.stateBreweries = result.data;
+      }, function(data, status, headers, config){
+        console.log('Error getting city breweries from api');
+        alert('Error getting city breweries from api');
+      });
     };
 
     // initialize the factory
