@@ -23,6 +23,12 @@
       templateUrl: 'app/views/beers.html'
     }
     )
+    .when('/vote',
+    { // detail of brewery with list of beers
+      controller: 'votesController as votesCtrl',
+      templateUrl: 'app/views/vote.html'
+    }
+    )
     .otherwise({redirectTo: '/'});
   });
 })();
