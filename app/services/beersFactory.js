@@ -16,6 +16,18 @@
         return $http.get('http://localhost:3000/beers/'+ beerId);
       };
 
+      beersAPI.getStateBeers = function(state){
+        return $http.get('http://localhost:3000/brewerydb/state/'+ state + '/beers');
+      };
+
+      beersAPI.getCityBeers = function(city){
+        return $http.get('http://localhost:3000/brewerydb/state/'+ city + '/beers');
+      };
+
+      beersAPI.getTopBeers = function(stateId){
+        return $http.get('http://localhost:3000/beers/state/'+ stateId);
+      };
+
 
       return beersAPI;
   };
