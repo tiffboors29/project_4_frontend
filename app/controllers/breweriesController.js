@@ -11,18 +11,14 @@
 
     // all breweries in a given location
     vm.breweries = [];
-    // vm.cityBreweries = [];
 
+    // states to choose from
     vm.states = [];
 
-    vm.state = '';
-    vm.search = '';
-    vm.place = '';
-    vm.heading = '';
-
-
-    // detail of one brewery
-    vm.brewery = {};
+    // following get set in getStateBeers or getCityBeers
+    vm.search = ''; // city name
+    vm.place = '';  // set to city or state being passed
+    vm.heading = '';  // set in getBreweries functions'
 
     function init(){
       breweriesFactory.getStates()

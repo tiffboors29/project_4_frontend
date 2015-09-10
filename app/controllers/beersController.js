@@ -12,17 +12,12 @@
     // top beers by state
     vm.beers = [];
 
-    // detail of one beer
-    vm.beer = {};
-
     // states to choose from
     vm.states = [];
 
-    // title for page list
-    vm.heading = '';
-
-    // votes heading for page
-    vm.votes = '';
+    // following get set in getTopBeers
+    vm.heading = '';  // title for page list
+    vm.votes = '';  // votes heading for page
 
     function init(){
       beersFactory.getStates()
@@ -54,17 +49,6 @@
       });
     };
 
-    // retrieve all info for single beer
-    vm.getBeer = function(beerId) {
-      beersFactory.getBeer(beerId)
-      .then(function(result){
-        console.log('beer result.data: ', result.data);
-        vm.beer = result.data;
-      }, function(data, status, headers, config){
-        console.log('Error getting beer from api');
-        alert('Error getting beer from api');
-      });
-    };
     // initialize the factory
     init();
   };
