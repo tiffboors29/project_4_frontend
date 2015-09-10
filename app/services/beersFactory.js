@@ -12,11 +12,8 @@
         return $http.get('http://localhost:3000/beers/state/'+ stateId);
       };
 
-      beersAPI.getBeer = function(beerId){
-        return $http.get('http://localhost:3000/beers/'+ beerId);
-      };
-
       beersAPI.getStates = function(){
+        // allow access to list of states
         return $http.get('http://localhost:3000/states');
       };
 

@@ -17,11 +17,8 @@
         return $http.get('http://localhost:3000/brewerydb/city/'+ city);
       };
 
-      breweriesAPI.getBrewery = function(brewerydbId){
-        return $http.get('http://localhost:3000/'+ brewerydbId);
-      };
-
       breweriesAPI.getStates = function(){
+        // allow access to list of states
         return $http.get('http://localhost:3000/states');
       };
 
