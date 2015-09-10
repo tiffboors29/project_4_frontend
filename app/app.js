@@ -11,16 +11,16 @@
       templateUrl: 'app/views/home.html'
     }
     )
-    .when('/breweries/:state',
+    .when('/breweries',
     {
       controller: 'breweriesController as brewsCtrl',
       templateUrl: 'app/views/breweries.html'
     }
     )
-    .when('/breweries/:brewerydbId',
+    .when('/beers',
     { // detail of brewery with list of beers
-      controller: 'breweriesContoller as brewsCtrl',
-      templateUrl: 'app/views/breweries.html'
+      controller: 'beersContoller as beersCtrl',
+      templateUrl: 'app/views/beers.html'
     }
     )
     .otherwise({redirectTo: '/'});
