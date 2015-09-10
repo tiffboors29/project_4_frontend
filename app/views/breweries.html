@@ -33,19 +33,13 @@
 
   <div class="row" ng-model="breweriesFilter.name">
 
-    <div ng-show="stateSelected" ng-hide="cityInput" class="col-lg-12 text-left">
-      <h3>{{stateSelected}} Breweries</h3>
-      <ul ng-repeat="brewery in brewsCtrl.stateBreweries | filter: breweriesFilter | orderBy:brewsCtrl.sortBy:brewsCtrl.reverse">
+    <div class="col-lg-12 text-left">
+      <h3>{{stateSelected}} {{cityInput}} Breweries</h3>
+      <ul ng-repeat="brewery in brewsCtrl.breweries | filter: breweriesFilter | orderBy:brewsCtrl.sortBy:brewsCtrl.reverse">
         <li><a href="{{brewery.website}}">{{ brewery.name }}</a></li>
       </ul>
     </div>
 
-    <div ng-hide="stateSelected" ng-show="cityInput" class="col-lg-12 text-left">
-      <h3>{{cityInput}} Breweries</h3>
-      <ul ng-repeat="brewery in brewsCtrl.cityBreweries | filter: breweriesFilter | orderBy:brewsCtrl.sortBy:brewsCtrl.reverse">
-        <li><a href="{{brewery.website}}">{{ brewery.name }}</a></li>
-      </ul>
-    </div>
   </div>
 
 </div>
