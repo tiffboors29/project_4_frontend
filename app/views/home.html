@@ -19,7 +19,7 @@
                 <p>OR</p>
               </div>
               <div class="col-md-3">
-                <select ng-model="stateSelected" ng-options="state.id as state.name for state in statesCtrl.states" class="form-control">
+                <select ng-model="stateSelected" class="form-control" ng-options="state.name as state.name for state in statesCtrl.states" class="form-control" ng-change="statesCtrl.getStateBreweries(stateSelected)">
                   <option value="">Choose a State</option>
                   <option ng-repeat="state in statesCtrl.states" value="{{state.id}}" ng-click="stateId={{state.id}}">{{state.name}}</option>
                 </select>
