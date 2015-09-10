@@ -15,6 +15,11 @@
 
     vm.states = [];
 
+    vm.state = '';
+    vm.search = '';
+    vm.place = '';
+
+
     // detail of one brewery
     vm.brewery = {};
 
@@ -40,6 +45,7 @@
       .then(function(result){
         console.log('state brews result.data: ', result.data);
         vm.breweries = result.data;
+        vm.place = state;
       }, function(data, status, headers, config){
         console.log('Error getting state breweries from api');
         alert('Error getting state breweries from api');
@@ -53,6 +59,7 @@
       .then(function(result){
         console.log('city brews result.data: ', result.data);
         vm.breweries = result.data;
+        vm.place = city;
       }, function(data, status, headers, config){
         console.log('Error getting city breweries from api');
         alert('Error getting city breweries from api');
