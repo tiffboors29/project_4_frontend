@@ -7,7 +7,7 @@
     $routeProvider
     .when('/',
     {
-      controller: 'statesController as statesCtrl',
+      controller: '',
       templateUrl: 'app/views/home.html'
     }
     )
