@@ -66,6 +66,15 @@
       });
     };
 
+    vm.updateVote = function(beerId) {
+      votesFactory.addVote(beerId)
+      .then(function(result){
+        console.log('update vote result: ', result);
+      }, function(data, status, headers, config){
+        console.log('Error updating vote in api');
+        alert('Error updating vote in api');
+      });
+    };
     // initialize the factory
     init();
   };
