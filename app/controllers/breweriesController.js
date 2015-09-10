@@ -48,7 +48,8 @@
 
     // retrieve all city breweries from breweries API
     vm.getCityBreweries = function(city) {
-      breweriesFactory.getCityBreweries(city)
+      var cityEncoded = encodeURIComponent(city.toLowerCase().trim());
+      breweriesFactory.getCityBreweries(cityEncoded)
       .then(function(result){
         console.log('city brews result.data: ', result.data);
         vm.stateBreweries = result.data;
