@@ -18,6 +18,7 @@
     vm.state = '';
     vm.search = '';
     vm.place = '';
+    vm.heading = '';
 
 
     // detail of one brewery
@@ -46,6 +47,7 @@
         console.log('state brews result.data: ', result.data);
         vm.breweries = result.data;
         vm.place = state;
+        vm.heading = 'Breweries in';
       }, function(data, status, headers, config){
         console.log('Error getting state breweries from api');
         alert('Error getting state breweries from api');
@@ -60,6 +62,7 @@
         console.log('city brews result.data: ', result.data);
         vm.breweries = result.data;
         vm.place = city;
+        vm.heading = 'Breweries in';
       }, function(data, status, headers, config){
         console.log('Error getting city breweries from api');
         alert('Error getting city breweries from api');
