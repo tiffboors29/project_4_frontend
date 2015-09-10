@@ -18,6 +18,12 @@
     // states to choose from
     vm.states = [];
 
+    // title for page list
+    vm.heading = '';
+
+    // votes heading for page
+    vm.votes = '';
+
     function init(){
       beersFactory.getStates()
       .then(function(result){
@@ -40,6 +46,8 @@
       .then(function(result){
         console.log('top beers result.data: ', result.data);
         vm.beers = result.data;
+        vm.heading = 'Top 10 Best-Voted Beers In:';
+        vm.votes = 'Total Votes:';
       }, function(data, status, headers, config){
         console.log('Error getting top beers from api');
         alert('Error getting top beers from api');
