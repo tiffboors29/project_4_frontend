@@ -12,6 +12,16 @@
         return $http.get('http://localhost:3000/states');
       };
 
+      statesAPI.getStateBreweries = function(state){
+        // allow access to list of breweries at location
+        return $http.get('http://localhost:3000/brewerydb/state/'+ state);
+      };
+
+      statesAPI.getCityBreweries = function(city){
+        // allow access to list of breweries at location
+        return $http.get('http://localhost:3000/brewerydb/city/'+ city);
+      };
+
       return statesAPI;
   };
 
