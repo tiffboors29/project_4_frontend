@@ -1,8 +1,36 @@
-<div class="container">
+<div class="container brewery-view">
   <div class="row">
-    <div class="col-lg-12 text-center">
+    <div class="col-lg-12 text-left">
       <h2 class="section-heading">Never Drink a Boring Beer Again</h2>
-      <p class="text-center">Make the most of your travel. Find the best regional beers, ranked by beer lovers like you!</p>
+      <p class="text-left">Make the most of your travel. Find the best regional beers, ranked by beer lovers like you!</p>
     </div>
   </div>
+
+  <form class="form-horizontal loc-form" role="form">
+        <div class="form-group">
+          <div class="col-md-12 ">
+            <div class="form-group row">
+              <div class="col-md-3">
+                <select ng-model="stateSelected" ng-options="state.id as state.name for state in beersCtrl.states" class="form-control" ng-change="beersCtrl.getTopBeers(stateSelected)">
+                  <option value="">Choose a State</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form> <!-- end form-->
+      <p> You chose state: {{stateSelected}}</p>
+
+  <div class="row" ng-model="beersFilter.name">
+
+    <div class="col-lg-12 text-left">
+      <h3>{{stateSelected}} {{cityInput}} Breweries</h3>
+      <ul ng-repeat="beer in beersCtrl.beers | filter: beersFilter | orderBy:beersCtrl.sortBy:beersCtrl.reverse">
+        <li><a href="{{brewery.website}}">{{ brewery.name }}</a></li>
+      </ul>
+    </div>
+
+  </div>
+
 </div>
+
