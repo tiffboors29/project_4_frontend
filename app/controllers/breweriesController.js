@@ -10,8 +10,8 @@
     vm.reverse = false;
 
     // all breweries in a given location
-    vm.stateBreweries = [];
-    vm.cityBreweries = [];
+    vm.breweries = [];
+    // vm.cityBreweries = [];
 
     vm.states = [];
 
@@ -39,7 +39,7 @@
       breweriesFactory.getStateBreweries(state)
       .then(function(result){
         console.log('state brews result.data: ', result.data);
-        vm.stateBreweries = result.data;
+        vm.breweries = result.data;
       }, function(data, status, headers, config){
         console.log('Error getting state breweries from api');
         alert('Error getting state breweries from api');
@@ -52,7 +52,7 @@
       breweriesFactory.getCityBreweries(cityEncoded)
       .then(function(result){
         console.log('city brews result.data: ', result.data);
-        vm.stateBreweries = result.data;
+        vm.breweries = result.data;
       }, function(data, status, headers, config){
         console.log('Error getting city breweries from api');
         alert('Error getting city breweries from api');
