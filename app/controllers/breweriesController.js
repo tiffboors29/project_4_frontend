@@ -38,6 +38,8 @@
 
     // retrieve all state breweries from breweries API
     vm.getStateBreweries = function(state) {
+      vm.place = '';
+      vm.heading = 'Please wait, & have a beer while the breweries are loading.';
       breweriesFactory.getStateBreweries(state)
       .then(function(result){
         console.log('state brews result.data: ', result.data);
@@ -52,6 +54,8 @@
 
     // retrieve all city breweries from breweries API
     vm.getCityBreweries = function(city) {
+      vm.place = '';
+      vm.heading = 'Please wait, & have a beer while the breweries are loading.';
       var cityEncoded = encodeURIComponent(city.toLowerCase().trim());
       breweriesFactory.getCityBreweries(cityEncoded)
       .then(function(result){

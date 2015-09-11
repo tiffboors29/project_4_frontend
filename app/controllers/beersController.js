@@ -36,6 +36,7 @@
 
     // retrieve all top state beers from breweries API
     vm.getTopBeers = function(stateId) {
+      vm.heading = 'Please wait, & have a beer while the rankings are loading.';
       beersFactory.getTopBeers(stateId)
       .then(function(result){
         console.log('top beers result.data: ', result.data);
