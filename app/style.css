@@ -41,6 +41,10 @@ h3 {
   font-size: 2em;
 }
 
+p {
+  font-size: 1.3em;
+}
+
 /**** navbar styles ****/
 .navbar-brand {
   font-size: 25px;
