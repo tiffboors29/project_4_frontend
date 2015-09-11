@@ -6,20 +6,21 @@
   var breweriesFactory = function($http){
 
       var breweriesAPI = {};
+      var heroku = 'https://stark-basin-3342.herokuapp.com';
 
       breweriesAPI.getStateBreweries = function(state){
         // allow access to list of breweries at location
-        return $http.get('stark-basin-3342.herokuapp.com/brewerydb/state/'+ state);
+        return $http.get(heroku + '/brewerydb/state/'+ state);
       };
 
       breweriesAPI.getCityBreweries = function(city){
         // allow access to list of breweries at location
-        return $http.get('stark-basin-3342.herokuapp.com/brewerydb/city/'+ city);
+        return $http.get(heroku + '/brewerydb/city/'+ city);
       };
 
       breweriesAPI.getStates = function(){
         // allow access to list of states
-        return $http.get('stark-basin-3342.herokuapp.com/states');
+        return $http.get(heroku + '/states');
       };
 
       return breweriesAPI;
