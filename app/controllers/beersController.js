@@ -41,9 +41,14 @@
       beersFactory.getTopBeers(stateId)
       .then(function(result){
         console.log('top beers result.data: ', result.data);
-        vm.beers = result.data;
-        vm.heading = 'Top 10 Best-Voted Beers In:';
-        vm.votes = 'Total Votes:';
+        if (result.data.length > 0) {
+          vm.beers = result.data;
+          vm.heading = 'Top 10 Best-Voted Beers In:';
+          vm.votes = 'Total Votes:';
+        } else {
+          vm.heading = 'Go to the beers page and vote!. There are not yet rankings for';
+          vm.beers = result.data;
+        }
       }, function(data, status, headers, config){
         console.log('Error getting top beers from api');
         alert('We\'re sorry. We hit an error getting the top beers. Have a beer and try again later.');
