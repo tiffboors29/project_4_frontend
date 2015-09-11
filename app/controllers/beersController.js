@@ -46,7 +46,7 @@
           vm.heading = 'Top 10 Best-Voted Beers In:';
           vm.votes = 'Total Votes:';
         } else {
-          vm.heading = 'Go to the beers page and vote!. There are not yet rankings for this state.';
+          vm.heading = 'Go to the beers page and vote! There are not yet rankings for this state.';
           vm.beers = result.data;
         }
       }, function(data, status, headers, config){
