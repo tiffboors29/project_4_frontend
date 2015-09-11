@@ -151,6 +151,21 @@ p {
   font-size: 1.5em;
 }
 
+.feature-hbtn {
+  background-color: #BF4C41;
+  padding: 10px;
+  border-radius: 10px;
+  color: #EBF2F2;
+  font-size: 1.5em;
+  width: 200px;
+  display: inline-block;
+  margin-left: 10px;
+}
+
+.left-feature-hbtn {
+  margin-left: 2%;
+}
+
 /***************************************/
 
 
@@ -198,6 +213,10 @@ p {
   padding-bottom: 1%;
   font-size: 1.5em;
   color: #EBF2F2;
+}
+
+.red {
+  color: #BF4C41;
 }
 
 
