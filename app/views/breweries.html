@@ -36,7 +36,7 @@
     <div class="col-lg-12 text-left">
       <h3>{{brewsCtrl.heading}} {{brewsCtrl.place}}</h3>
 
-      <ul ng-repeat="brewery in brewsCtrl.breweries | filter: breweriesFilter | orderBy:brewsCtrl.sortBy:brewsCtrl.reverse">
+      <ul ng-repeat="brewery in brewsCtrl.breweries | filter: breweriesFilter | orderBy:brewsCtrl.sortBy:brewsCtrl.reverse" id="double">
         <li><a href="{{brewery.website}}">{{ brewery.name }}</a></li>
       </ul>
     </div>
