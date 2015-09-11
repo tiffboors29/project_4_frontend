@@ -17,6 +17,10 @@
         return $http.get('http://localhost:3000/states');
       };
 
+      beersAPI.addVote = function(beerId){
+        // allow user to update vote count for a beer
+        return $http.put('http://localhost:3000/beers/vote/' + beerId);
+      };
 
       return beersAPI;
   };

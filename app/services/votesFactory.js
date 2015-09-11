@@ -24,7 +24,7 @@
 
       votesAPI.addVote = function(beerId){
         // allow user to update vote count for a beer
-        return $http.put('http://localhost:3000/beers/' + beerId);
+        return $http.put('http://localhost:3000/beers/vote/' + beerId);
       };
 
       votesAPI.createVotedBeer = function(beerId){
