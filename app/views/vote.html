@@ -7,40 +7,43 @@
   </div>
 
   <form class="form-horizontal loc-form" role="form">
-        <div class="form-group">
-          <div class="col-md-12 ">
-            <div class="form-group row">
-              <div class="col-md-7">
-                <input ng-model="votesCtrl.search" type="text" class="form-control" placeholder="Search for beers by City">
-              </div>
-              <div class="col-md-1 hide-sml">
-                <div class="input-group-btn">
-                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" ng-click="votesCtrl.getCityBeers(votesCtrl.search)"></i></button>
-                </div>
-              </div>
-              <div class="col-md-1 or-option hide-sml">
-                <p>OR</p>
-              </div>
-              <div class="col-md-3">
-                <select ng-model="votesCtrl.state" ng-options="state.name as state.name for state in votesCtrl.states" class="form-control" ng-change="votesCtrl.getStateBeers(votesCtrl.state)">
-                  <option value="">Choose a State</option>
-                </select>
-              </div>
+    <div class="form-group">
+      <div class="col-md-12 ">
+        <div class="form-group row">
+          <div class="col-md-7">
+            <input ng-model="votesCtrl.search" type="text" class="form-control" placeholder="Search for beers by City">
+          </div>
+          <div class="col-md-1 hide-sml">
+            <div class="input-group-btn">
+                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" ng-click="votesCtrl.getCityBeers(votesCtrl.search)"></i></button>
             </div>
           </div>
+          <div class="col-md-1 or-option hide-sml">
+            <p>OR</p>
+          </div>
+          <div class="col-md-3">
+            <select ng-model="votesCtrl.state" ng-options="state.name as state.name for state in votesCtrl.states" class="form-control" ng-change="votesCtrl.getStateBeers(votesCtrl.state)">
+              <option value="">Choose a State</option>
+            </select>
+          </div>
         </div>
-      </form> <!-- end form-->
-
+      </div>
+    </div>
+  </form> <!-- end form-->
+  <br>
   <div class="row" ng-model="beersFilter.name">
 
     <div class="col-lg-12 text-left">
       <h3>{{votesCtrl.heading}} {{votesCtrl.place}}</h3>
-
-      <ul ng-repeat="beer in votesCtrl.beers | filter: beersFilter | orderBy:votesCtrl.sortBy:votesCtrl.reverse">
-        <li><a href="{{beer.website}}">{{ beer.name }}</a></li>
-      </ul>
+      <div class="individ-beer" ng-repeat="beer in votesCtrl.beers | filter: beersFilter | orderBy:votesCtrl.sortBy:votesCtrl.reverse">
+        <h2>{{ beer.name }}</h2>
+        <h4><a href="{{beer.brewery_website}}">{{ beer.brewery_name }}</a></h4>
+        <p>{{ beer.description }}</p>
+        <h4>{{beersCtrl.votes}} {{ beer.beer_id.votes}}</h4>
+        <button class="vote-btn" id="{{beer.id}}" ng-click="votesCtrl.vote(beer.id)">Vote</button>
+        <br>
+      </div>
     </div>
 
   </div>
-
 </div>
