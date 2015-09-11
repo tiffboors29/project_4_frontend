@@ -26,7 +26,6 @@
         vm.states = result.data;
       }, function(data, status, headers, config){
         console.log('Error getting states list from api');
-        alert('Error getting states list from api');
       });
     }
 
@@ -45,7 +44,7 @@
         vm.votes = 'Total Votes:';
       }, function(data, status, headers, config){
         console.log('Error getting top beers from api');
-        alert('Error getting top beers from api');
+        alert('We\'re sorry. We hit an error getting the top beers. Have a beer and try again later.');
       });
     };
 
@@ -54,9 +53,10 @@
       beersFactory.addVote(beerId)
         .then(function(result){
           console.log('update vote result: ', result);
+          alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
         }, function(data, status, headers, config){
           console.log('Error updating vote in api');
-          alert('Error updating vote in api');
+          alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
         });
     };
 
