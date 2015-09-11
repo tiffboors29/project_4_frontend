@@ -9,17 +9,17 @@
 
       breweriesAPI.getStateBreweries = function(state){
         // allow access to list of breweries at location
-        return $http.get('https://git.heroku.com/stark-basin-3342.git/brewerydb/state/'+ state);
+        return $http.get('stark-basin-3342.herokuapp.com/brewerydb/state/'+ state);
       };
 
       breweriesAPI.getCityBreweries = function(city){
         // allow access to list of breweries at location
-        return $http.get('https://git.heroku.com/stark-basin-3342.git/brewerydb/city/'+ city);
+        return $http.get('stark-basin-3342.herokuapp.com/brewerydb/city/'+ city);
       };
 
       breweriesAPI.getStates = function(){
         // allow access to list of states
-        return $http.get('https://git.heroku.com/stark-basin-3342.git/states');
+        return $http.get('stark-basin-3342.herokuapp.com/states');
       };
 
       return breweriesAPI;
