@@ -9,17 +9,17 @@
 
       beersAPI.getTopBeers = function(stateId){
         // allow access to list of beers at location
-        return $http.get('http://localhost:3000/beers/state/'+ stateId);
+        return $http.get('https://git.heroku.com/stark-basin-3342.git/beers/state/'+ stateId);
       };
 
       beersAPI.getStates = function(){
         // allow access to list of states
-        return $http.get('http://localhost:3000/states');
+        return $http.get('https://git.heroku.com/stark-basin-3342.git/states');
       };
 
       beersAPI.addVote = function(beerId){
         // allow user to update vote count for a beer
-        return $http.put('http://localhost:3000/beers/vote/' + beerId);
+        return $http.put('https://git.heroku.com/stark-basin-3342.git/beers/vote/' + beerId);
       };
 
       return beersAPI;

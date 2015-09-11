@@ -9,22 +9,22 @@
 
       votesAPI.getStateBeers = function(state){
         // allow access to list of beers at location
-        return $http.get('http://localhost:3000/brewerydb/state/'+ state + '/beers');
+        return $http.get('https://git.heroku.com/stark-basin-3342.git/brewerydb/state/'+ state + '/beers');
       };
 
       votesAPI.getCityBeers = function(city){
         // allow access to list of beers at location
-        return $http.get('http://localhost:3000/brewerydb/city/'+ city + '/beers');
+        return $http.get('https://git.heroku.com/stark-basin-3342.git/brewerydb/city/'+ city + '/beers');
       };
 
       votesAPI.getBeer = function(beerId){
         // allow access to get beer if it exists (has > 0 votes)
-        return $http.get('http://localhost:3000/beers/' + beerId);
+        return $http.get('https://git.heroku.com/stark-basin-3342.git/beers/' + beerId);
       };
 
       votesAPI.addVote = function(beerId){
         // allow user to update vote count for a beer
-        return $http.put('http://localhost:3000/beers/vote/' + beerId);
+        return $http.put('https://git.heroku.com/stark-basin-3342.git/beers/vote/' + beerId);
       };
 
       votesAPI.createVotedBeer = function(beerId){
