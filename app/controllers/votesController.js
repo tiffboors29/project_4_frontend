@@ -55,7 +55,7 @@
     // retrieve all city beers from breweries API
     vm.getCityBeers = function(city) {
       var cityEncoded = encodeURIComponent(city.toLowerCase().trim());
-      votesFactory.getCityBreweries(cityEncoded)
+      votesFactory.getCityBeers(cityEncoded)
       .then(function(result){
         console.log('city beers result.data: ', result.data);
         vm.beers = result.data;
@@ -67,15 +67,40 @@
       });
     };
 
-    vm.updateVote = function(beerId) {
-      votesFactory.addVote(beerId)
-      .then(function(result){
-        console.log('update vote result: ', result);
-      }, function(data, status, headers, config){
-        console.log('Error updating vote in api');
-        alert('Error updating vote in api');
-      });
+    vm.vote = function(beerId) {
+      if (vm.checkForBeer(beerId)) { // if beer has been voted for before
+        votesFactory.addVote(beerId)
+        .then(function(result){
+          console.log('update vote result: ', result);
+        }, function(data, status, headers, config){
+          console.log('Error updating vote in api');
+          alert('Error updating vote in api');
+        });
+      } else { // if beer has not been voted for before
+        votesFactory.createVotedBeer(beerId)
+        .then(function(result){
+          console.log('update vote result: ', result);
+        }, function(data, status, headers, config){
+          console.log('Error updating vote in api');
+          alert('Error updating vote in api');
+        });
+      }
     };
+
+    vm.checkForBeer = function(beerId) {
+      var exists;
+      votesFactory.getBeer(beerId)
+      .then(function(result){
+          console.log('beer exists: ', result);
+          exists = true;
+        }, function(data, status, headers, config){
+          console.log('Error getting beer from api');
+          exists = false;
+        });
+      return exists;
+    };
+
+
     // initialize the factory
     init();
   };
