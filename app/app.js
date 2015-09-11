@@ -1,7 +1,7 @@
 'use strict';
 
 (function breweriesAppIIFE(){
-  var app = angular.module('breweriesApp', ['ngRoute']);
+  var app = angular.module('breweriesApp', ['ngRoute', 'cgBusy']);
 
   app.config(function($routeProvider){
     $routeProvider
