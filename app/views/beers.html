@@ -30,7 +30,7 @@
         <h4><a href="{{beer.beer_id.brewery_website}}">{{ beer.beer_id.brewery_name }}</a></h4>
         <p>{{ beer.beer_id.description }}</p>
         <h4>{{beersCtrl.votes}} {{ beer.beer_id.votes}}</h4>
-        <button class="vote-btn" id="{{beer.beer_id.beer_id}}">Vote</button>
+        <button class="vote-btn" id="{{beer.beer_id.beer_id}}" ng-click="beersCtrl.addVote(beer.beer_id.beer_id)">Vote</button>
       </div>
     </div>
   </div>
