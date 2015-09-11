@@ -29,7 +29,6 @@
         vm.states = result.data;
       }, function(data, status, headers, config){
         console.log('Error getting states list from api');
-        alert('Error getting states list from api');
       });
     }
 
@@ -48,7 +47,7 @@
         vm.heading = 'Beers in';
       }, function(data, status, headers, config){
         console.log('Error getting state beers from api');
-        alert('Error getting state beers from api');
+        alert('We\'re sorry. We hit an error trying to get the list of beers. Have a beer and try again later.');
       });
     };
 
@@ -63,26 +62,30 @@
         vm.heading = 'Beers in';
       }, function(data, status, headers, config){
         console.log('Error getting city beers from api');
-        alert('Error getting city beers from api');
+        alert('We\'re sorry. We hit an error trying to get the list of beers. Have a beer and try again later.');
       });
     };
 
     vm.vote = function(beerId) {
-      if (vm.checkForBeer(beerId)) { // if beer has been voted for before
+      if (vm.checkForBeer(beerId)) {
+      // if beer has been voted for before
         votesFactory.addVote(beerId)
         .then(function(result){
           console.log('update vote result: ', result);
+          alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
         }, function(data, status, headers, config){
           console.log('Error updating vote in api');
-          alert('Error updating vote in api');
+          alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
         });
-      } else { // if beer has not been voted for before
+      } else {
+        // if beer has not been voted for before
         votesFactory.createVotedBeer(beerId)
         .then(function(result){
           console.log('update vote result: ', result);
+          alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
         }, function(data, status, headers, config){
           console.log('Error updating vote in api');
-          alert('Error updating vote in api');
+          alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
         });
       }
     };
@@ -94,7 +97,7 @@
           console.log('beer exists: ', result);
           exists = true;
         }, function(data, status, headers, config){
-          console.log('Error getting beer from api');
+          console.log('beer does not exist');
           exists = false;
         });
       return exists;

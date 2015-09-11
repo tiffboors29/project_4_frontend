@@ -28,7 +28,6 @@
         vm.states = result.data;
       }, function(data, status, headers, config){
         console.log('Error getting states list from api');
-        alert('Error getting states list from api');
       });
     }
 
@@ -47,7 +46,7 @@
         vm.heading = 'Breweries in';
       }, function(data, status, headers, config){
         console.log('Error getting state breweries from api');
-        alert('Error getting state breweries from api');
+        alert('We\'re sorry. We hit an error trying to get the list of breweries. Have a beer and try again later.');
       });
     };
 
@@ -62,7 +61,7 @@
         vm.heading = 'Breweries in';
       }, function(data, status, headers, config){
         console.log('Error getting city breweries from api');
-        alert('Error getting city breweries from api');
+        alert('We\'re sorry. We hit an error trying to get the list of breweries. Have a beer and try again later.');
       });
     };
 
