@@ -39,6 +39,7 @@
 
     // retrieve all state beers from breweries API
     vm.getStateBeers = function(state) {
+      vm.beers = [];
       vm.place = '';
       vm.heading = 'Please wait, & have a beer while the beers are loading.';
       votesFactory.getStateBeers(state)
@@ -55,6 +56,7 @@
 
     // retrieve all city beers from breweries API
     vm.getCityBeers = function(city) {
+      vm.beers = [];
       vm.place = '';
       vm.heading = 'Please wait, & have a beer while the beers are loading.';
       var cityEncoded = encodeURIComponent(city.toLowerCase().trim());
