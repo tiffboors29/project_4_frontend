@@ -68,7 +68,8 @@
     };
 
     vm.vote = function(beerId) {
-      if (vm.checkForBeer(beerId)) { // if beer has been voted for before
+      if (vm.checkForBeer(beerId)) {
+      // if beer has been voted for before
         votesFactory.addVote(beerId)
         .then(function(result){
           console.log('update vote result: ', result);
@@ -76,7 +77,8 @@
           console.log('Error updating vote in api');
           alert('Error updating vote in api');
         });
-      } else { // if beer has not been voted for before
+      } else {
+        // if beer has not been voted for before
         votesFactory.createVotedBeer(beerId)
         .then(function(result){
           console.log('update vote result: ', result);
@@ -94,7 +96,7 @@
           console.log('beer exists: ', result);
           exists = true;
         }, function(data, status, headers, config){
-          console.log('Error getting beer from api');
+          console.log('beer does not exist');
           exists = false;
         });
       return exists;
