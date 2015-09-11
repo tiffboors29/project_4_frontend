@@ -7,20 +7,21 @@
 
       var breweriesAPI = {};
       var heroku = 'https://stark-basin-3342.herokuapp.com';
+      var local = 'http://localhost:3000';
 
       breweriesAPI.getStateBreweries = function(state){
         // allow access to list of breweries at location
-        return $http.get(heroku + '/brewerydb/state/'+ state);
+        return $http.get(local + '/brewerydb/state/'+ state);
       };
 
       breweriesAPI.getCityBreweries = function(city){
         // allow access to list of breweries at location
-        return $http.get(heroku + '/brewerydb/city/'+ city);
+        return $http.get(local + '/brewerydb/city/'+ city);
       };
 
       breweriesAPI.getStates = function(){
         // allow access to list of states
-        return $http.get(heroku + '/states');
+        return $http.get(local + '/states');
       };
 
       return breweriesAPI;
