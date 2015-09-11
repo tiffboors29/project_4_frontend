@@ -9,16 +9,20 @@ html, body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -100px;
+  margin: 0 auto -170px;
 }
 .footer, .push {
-  height: 100px;
+  height: 170px;
 }
 .footer {
   color: #EBF2F2;
   background-color: #4D7A8C;
   margin-top: 30px;
   padding-top: 40px;
+}
+.disclaimer {
+  color:#7AC1DE;
+  font-size: .8em;
 }
 
 body {
@@ -102,6 +106,7 @@ p {
   .navbar-default {
     background-color: #4D7A8C;
   }
+
 }
 /***************************************/
 
