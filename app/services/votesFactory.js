@@ -17,9 +17,19 @@
         return $http.get('http://localhost:3000/brewerydb/city/'+ city + '/beers');
       };
 
+      votesAPI.getBeer = function(beerId){
+        // allow access to get beer if it exists (has > 0 votes)
+        return $http.get('http://localhost:3000/beers/' + beerId);
+      };
+
       votesAPI.addVote = function(beerId){
         // allow user to update vote count for a beer
         return $http.put('http://localhost:3000/beers/' + beerId);
+      };
+
+      votesAPI.createVotedBeer = function(beerId){
+        // allow user to vote for a beer that has no votes
+        return $http.post('http://localhost:3000/brewerydb/' + beerId);
       };
 
       votesAPI.getStates = function(){
