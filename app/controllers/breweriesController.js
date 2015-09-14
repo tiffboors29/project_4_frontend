@@ -17,7 +17,7 @@
 
     // following get set in getStateBeers or getCityBeers
     vm.state = ''; // state name
-    vm.search = ''; // city name
+    vm.search = ''; // postal code
     vm.place = '';  // set to city or state being passed
     vm.heading = '';  // set in getBreweries functions'
     vm.searchFilter = '';
@@ -55,21 +55,20 @@
       });
     };
 
-    // retrieve all city breweries from breweries API
-    vm.getCityBreweries = function(city) {
+    // retrieve all postal breweries from breweries API
+    vm.getPostalBreweries = function(postal) {
       vm.breweries = [];
       vm.place = '';
       vm.heading = 'Please wait, & have a beer while the breweries are loading.';
-      var cityEncoded = encodeURIComponent(city.toLowerCase().trim());
-      breweriesFactory.getCityBreweries(cityEncoded)
+      breweriesFactory.getPostalBreweries(postal)
       .then(function(result){
-        console.log('city brews result.data: ', result.data);
+        console.log('postalCode brews result.data: ', result.data);
         vm.breweries = result.data;
-        vm.place = city;
+        vm.place = postal;
         vm.heading = 'Breweries in';
         vm.searchFilter = 'Search By Brewery Name:' ;
       }, function(data, status, headers, config){
-        console.log('Error getting city breweries from api');
+        console.log('Error getting postalCode breweries from api');
         alert('We\'re sorry. We hit an error trying to get the list of breweries. Have a beer and try again later.');
       });
     };

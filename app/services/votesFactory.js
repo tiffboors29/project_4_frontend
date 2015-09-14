@@ -14,9 +14,9 @@
         return $http.get(local + '/brewerydb/state/'+ state + '/beers');
       };
 
-      votesAPI.getCityBeers = function(city){
+      votesAPI.getPostalBeers = function(postal){
         // allow access to list of beers at location
-        return $http.get(local + '/brewerydb/city/'+ city + '/beers');
+        return $http.get(local + '/brewerydb/postal/'+ postal + '/beers');
       };
 
       votesAPI.checkBeer = function(beerId){

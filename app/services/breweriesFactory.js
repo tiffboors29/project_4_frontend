@@ -14,9 +14,9 @@
         return $http.get(local + '/brewerydb/state/'+ state);
       };
 
-      breweriesAPI.getCityBreweries = function(city){
+      breweriesAPI.getPostalBreweries = function(postal){
         // allow access to list of breweries at location
-        return $http.get(local + '/brewerydb/city/'+ city);
+        return $http.get(local + '/brewerydb/postal/'+ postal);
       };
 
       breweriesAPI.getStates = function(){
