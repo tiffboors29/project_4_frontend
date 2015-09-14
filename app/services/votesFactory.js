@@ -19,9 +19,9 @@
         return $http.get(local + '/brewerydb/city/'+ city + '/beers');
       };
 
-      votesAPI.getBeer = function(beerId){
-        // allow access to get beer if it exists (has > 0 votes)
-        return $http.get(local + '/beers/' + beerId);
+      votesAPI.checkBeer = function(beerId){
+        // allow access to see if beer exists in beer table
+        return $http.get(local + '/beers/ranked/' + beerId);
       };
 
       votesAPI.addVote = function(beerId){

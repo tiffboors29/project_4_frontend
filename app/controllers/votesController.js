@@ -21,7 +21,6 @@
     vm.place = '';  // set to city or state being passed
     vm.heading = '';  // set in getBreweries functions'
 
-
     function init(){
       votesFactory.getStates()
       .then(function(result){
@@ -72,43 +71,39 @@
       });
     };
 
+    // check if beer exists and either create it or update vote count
     vm.vote = function(beerId) {
-      if (vm.checkForBeer(beerId)) {
-      // if beer has been voted for before
-        votesFactory.addVote(beerId)
-        .then(function(result){
-          console.log('update vote result: ', result);
-          alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
-        }, function(data, status, headers, config){
-          console.log('Error updating vote in api');
-          alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
-        });
-      } else {
-        // if beer has not been voted for before
-        votesFactory.createVotedBeer(beerId)
-        .then(function(result){
-          console.log('update vote result: ', result);
-          alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
-        }, function(data, status, headers, config){
-          console.log('Error updating vote in api');
-          alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
-        });
-      }
-    };
-
-    vm.checkForBeer = function(beerId) {
-      var exists;
-      votesFactory.getBeer(beerId)
+      votesFactory.checkBeer(beerId)
       .then(function(result){
-          console.log('beer exists: ', result);
-          exists = true;
-        }, function(data, status, headers, config){
-          console.log('beer does not exist');
-          exists = false;
-        });
-      return exists;
+        console.log('beer checking..result.data: ', result.data);
+        var exists = result.data;
+        if (exists !== null) {
+          console.log('beer exists..updating now');
+          // if beer has been voted for before
+          votesFactory.addVote(beerId)
+          .then(function(result){
+            console.log('update vote result: ', result);
+            alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
+          }, function(data, status, headers, config){
+            console.log('Error updating vote in api');
+            alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
+          });
+        } else {
+          console.log('beer not found... creating now');
+          // if beer has not been voted for before
+          votesFactory.createVotedBeer(beerId)
+          .then(function(result){
+            console.log('create vote result: ', result);
+            alert('Thanks for voting! Continue voting on this page or refresh the page to see your votes added.');
+          }, function(data, status, headers, config){
+            console.log('Error updating vote in api');
+            alert('We\'re sorry. We hit an error trying to add your vote. Have a beer and try again later.');
+          });
+        }
+      }, function(data, status, headers, config){
+        console.log('Error checking for beer');
+      });
     };
-
 
     // initialize the factory
     init();
