@@ -19,7 +19,8 @@
     vm.state = ''; // state name
     vm.search = ''; // city name
     vm.place = '';  // set to city or state being passed
-    vm.heading = '';  // set in getBreweries functions'
+    vm.heading = '';  // set in getBreweries functions
+    vm.searchFilter = ''; // set in getBreweries functions
 
     function init(){
       votesFactory.getStates()
@@ -47,6 +48,7 @@
         vm.beers = result.data;
         vm.place = state;
         vm.heading = 'Beers in';
+        vm.searchFilter = 'Search By Beer Name:';
       }, function(data, status, headers, config){
         console.log('Error getting state beers from api');
         alert('We\'re sorry. We hit an error trying to get the list of beers. Have a beer and try again later.');
@@ -65,6 +67,7 @@
         vm.beers = result.data;
         vm.place = city;
         vm.heading = 'Beers in';
+        vm.searchFilter = 'Search By Beer Name:';
       }, function(data, status, headers, config){
         console.log('Error getting city beers from api');
         alert('We\'re sorry. We hit an error trying to get the list of beers. Have a beer and try again later.');

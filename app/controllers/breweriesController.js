@@ -20,6 +20,7 @@
     vm.search = ''; // city name
     vm.place = '';  // set to city or state being passed
     vm.heading = '';  // set in getBreweries functions'
+    vm.searchFilter = '';
 
     function init(){
       breweriesFactory.getStates()
@@ -47,6 +48,7 @@
         vm.breweries = result.data;
         vm.place = state;
         vm.heading = 'Breweries in';
+        vm.searchFilter = 'Search By Brewery Name:';
       }, function(data, status, headers, config){
         console.log('Error getting state breweries from api');
         alert('We\'re sorry. We hit an error trying to get the list of breweries. Have a beer and try again later.');
@@ -65,6 +67,7 @@
         vm.breweries = result.data;
         vm.place = city;
         vm.heading = 'Breweries in';
+        vm.searchFilter = 'Search By Brewery Name:' ;
       }, function(data, status, headers, config){
         console.log('Error getting city breweries from api');
         alert('We\'re sorry. We hit an error trying to get the list of breweries. Have a beer and try again later.');

@@ -31,11 +31,13 @@
         </div>
       </form> <!-- end form-->
 
-  <div class="row" ng-model="breweriesFilter.name">
+  <div class="row">
 
     <div class="col-lg-12 text-left">
       <h3>{{brewsCtrl.heading}} {{brewsCtrl.place}}</h3>
-
+      <br>
+      <h4>{{brewsCtrl.searchFilter}} <input type="text" ng-model="breweriesFilter.name"/> </h4>
+      <br>
       <ul ng-repeat="brewery in brewsCtrl.breweries | filter: breweriesFilter | orderBy:brewsCtrl.sortBy:brewsCtrl.reverse" id="double">
         <li><a href="{{brewery.website}}">{{ brewery.name }}</a></li>
       </ul>
