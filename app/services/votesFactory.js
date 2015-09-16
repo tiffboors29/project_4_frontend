@@ -22,7 +22,7 @@
 
       votesAPI.checkBeer = function(beerId){
         // allow access to see if beer exists in beer table
-        return $http.get(digO + '/brewerydb/city/'+ city + '/beers');
+        return $http.get(digO + '/beers/ranked/' + beerId);
       };
 
       votesAPI.getBeer = function(beerId){
