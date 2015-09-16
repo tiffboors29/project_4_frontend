@@ -7,21 +7,23 @@
 
       var beersAPI = {};
       var heroku = 'https://stark-basin-3342.herokuapp.com';
+      var digO = 'http://104.236.204.243:3000';
       var local = 'http://localhost:3000';
 
       beersAPI.getTopBeers = function(stateId){
         // allow access to list of beers at location
-        return $http.get(local + '/beers/state/'+ stateId);
+        return $http.get(digO + '/beers/state/'+ stateId);
       };
 
       beersAPI.getStates = function(){
         // allow access to list of states
-        return $http.get(local + '/states');
+        return $http.get(digO + '/states');
       };
 
       beersAPI.addVote = function(beerId){
         // allow user to update vote count for a beer
-        return $http.put(local + '/beers/vote/' + beerId);
+        return $http.put(digO + '/beers/vote/' + beerId);
+
       };
 
       return beersAPI;
