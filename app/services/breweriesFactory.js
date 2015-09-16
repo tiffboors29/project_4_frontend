@@ -7,7 +7,7 @@
 
       var breweriesAPI = {};
       var heroku = 'https://stark-basin-3342.herokuapp.com';
-      var digO = 'http://104.236.204.243:3000';
+      var digO = 'http://104.236.204.243:3012';
       var local = 'http://localhost:3000';
 
       breweriesAPI.getStateBreweries = function(state){
