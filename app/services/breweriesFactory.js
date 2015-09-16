@@ -6,20 +6,22 @@
   var breweriesFactory = function($http){
 
       var breweriesAPI = {};
+      var digO = 'http://104.236.204.243:3000';
+      var local = 'http://localhost:3000';
 
       breweriesAPI.getStateBreweries = function(state){
         // allow access to list of breweries at location
-        return $http.get('http://localhost:3000/brewerydb/state/'+ state);
+        return $http.get(digO + '/brewerydb/state/'+ state);
       };
 
       breweriesAPI.getCityBreweries = function(city){
         // allow access to list of breweries at location
-        return $http.get('http://localhost:3000/brewerydb/city/'+ city);
+        return $http.get(digO + '/brewerydb/city/'+ city);
       };
 
       breweriesAPI.getStates = function(){
         // allow access to list of states
-        return $http.get('http://localhost:3000/states');
+        return $http.get(digO + '/states');
       };
 
       return breweriesAPI;
