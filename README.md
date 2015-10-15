@@ -13,7 +13,6 @@ Drink Good Beer Wherever Life Takes You
 - AJAX
 
 
-
 ##Planning
 - [User Stories](planning-docs/user-stories.txt)
 - Wireframes
