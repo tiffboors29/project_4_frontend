@@ -11,7 +11,6 @@ Drink Good Beer Wherever Life Takes You
 - ANGULAR.JS
 - JavaScript
 - AJAX
-- jQUERY
 
 
 
